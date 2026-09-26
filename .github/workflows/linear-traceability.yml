@@ -2,6 +2,11 @@ name: Linear traceability
 
 on:
   workflow_call:
+    inputs:
+      policy_ref:
+        description: Immutable commit of this policy repository, matching the caller's reusable-workflow pin.
+        required: true
+        type: string
   pull_request:
     types: [opened, edited, synchronize, reopened]
   push:
@@ -19,7 +24,8 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: kristoffersodersten/.github
-          ref: ${{ github.workflow_sha }}
+          ref: ${{ inputs.policy_ref || github.sha }}
+          persist-credentials: false
       - name: Validate pull request metadata
         if: github.event_name == 'pull_request'
         env:
