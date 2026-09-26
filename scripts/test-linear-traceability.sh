@@ -3,6 +3,16 @@ set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 validator="$root/scripts/validate-linear-traceability.sh"
+workflow="$root/.github/workflows/linear-traceability.yml"
+
+grep -Fq 'test "$POLICY_REF" = "$WORKFLOW_SHA"' "$workflow"
+grep -Fq 'repository: kristoffersodersten/.github' "$workflow"
+grep -Fq 'ref: ${{ job.workflow_sha }}' "$workflow"
+
+if grep -Fq 'ref: ${{ inputs.policy_ref || github.sha }}' "$workflow"; then
+  echo 'Reusable policy checkout must not trust an unverified caller-supplied ref.' >&2
+  exit 1
+fi
 
 valid_body=$'## Linear\nhttps://linear.app/sodersten-space/issue/SOD-559/enforce-global-github-to-linear-traceability-contract\n\n## Summary\n- Add policy\n\n## Scope\n- Included: policy\n- Not included: rollout\n\n## Verification\n- Observed test\n\n## Risk and rollback\n- Revert commit'
 
