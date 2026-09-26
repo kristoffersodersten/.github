@@ -28,6 +28,8 @@ validator is available at:
 
 ```yaml
 uses: kristoffersodersten/.github/.github/workflows/linear-traceability.yml@<verified-commit-sha>
+with:
+  policy_ref: <verified-commit-sha>
 ```
 
 Templates communicate the contract but do not stop a merge. A repository is
