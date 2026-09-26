@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-09-26T21:05:00Z",
+  "expires_at": "2026-10-03T21:05:00Z",
+  "repository": {
+    "name": ".github",
+    "tier": "P2",
+    "linear_issue": "SOD-1094",
+    "source_owner": "Namaka-Inc",
+    "target_owner": "kristoffersodersten",
+    "visibility": "public",
+    "location": "target",
+    "product_boundary": "cross-repository-control-plane"
+  },
+  "maturity": {
+    "level": 5,
+    "transfer_verified": true,
+    "integration_verified": true,
+    "full_system_verified": true,
+    "deployment_accepted": true,
+    "exact_sha": "e0018afca66f2884a9f7654a8c2cba01e2fc5f04",
+    "verified_at": "2026-09-26T21:03:00Z"
+  },
+  "environment_truth": {
+    "execution_geography": "remote",
+    "compute_provider": "Hetzner AX102 and GitHub Actions",
+    "deployment_environment": "development",
+    "runtime_target": "Protected GitHub Actions consumer executions and Hetzner contract checkout",
+    "cloud_fallback": "forbidden",
+    "cost": "Existing owner-operated Hetzner and governed GitHub Actions capacity",
+    "latency": "Consumer admission runs completed successfully; no standalone request surface"
+  },
+  "presentation": {
+    "display_name": "Shared GitHub governance",
+    "product_summary": "Personal-namespace reusable workflow and repository governance authority"
+  },
+  "analysis": [
+    {
+      "kind": "gap",
+      "status": "complete",
+      "finding_ids": [],
+      "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433",
+      "residual_unknowns": [
+        "Finite qualification cannot exhaust every future platform, provider or human sequence."
+      ]
+    },
+    {
+      "kind": "blind_spot",
+      "status": "complete",
+      "finding_ids": [],
+      "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433",
+      "residual_unknowns": [
+        "Finite qualification cannot exhaust every future platform, provider or human sequence."
+      ]
+    },
+    {
+      "kind": "negative_space",
+      "status": "complete",
+      "finding_ids": [],
+      "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433",
+      "residual_unknowns": [
+        "Finite qualification cannot exhaust every future platform, provider or human sequence."
+      ]
+    }
+  ],
+  "findings": [],
+  "adversarial": {
+    "domains": [
+      {
+        "id": "hostile_inputs",
+        "applicability": "required",
+        "status": "passed",
+        "case_count": 1,
+        "rationale": "Repository validators exercise malformed and hostile source or runtime inputs.",
+        "tools": [
+          "repository-owned deterministic tests",
+          "protected exact-SHA CI",
+          "isolated recovery rehearsal"
+        ],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "authorization_identity_consent",
+        "applicability": "required",
+        "status": "passed",
+        "case_count": 1,
+        "rationale": "Identity and authority bindings are exact and fail closed.",
+        "tools": [
+          "repository-owned deterministic tests",
+          "protected exact-SHA CI",
+          "isolated recovery rehearsal"
+        ],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "injection_and_leakage",
+        "applicability": "required",
+        "status": "passed",
+        "case_count": 1,
+        "rationale": "Validation rejects unsafe content and protects secret boundaries.",
+        "tools": [
+          "repository-owned deterministic tests",
+          "protected exact-SHA CI",
+          "isolated recovery rehearsal"
+        ],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "replay_ordering_concurrency",
+        "applicability": "required",
+        "status": "passed",
+        "case_count": 1,
+        "rationale": "State and event ordering is deterministic or explicitly rejected.",
+        "tools": [
+          "repository-owned deterministic tests",
+          "protected exact-SHA CI",
+          "isolated recovery rehearsal"
+        ],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "resource_exhaustion",
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "case_count": 0,
+        "rationale": "No persistent queue or resource-owning runtime exists in this repository deployment boundary.",
+        "tools": [],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "dependency_network_failure",
+        "applicability": "required",
+        "status": "passed",
+        "case_count": 1,
+        "rationale": "Dependency and transport failure remains causal and visible.",
+        "tools": [
+          "repository-owned deterministic tests",
+          "protected exact-SHA CI",
+          "isolated recovery rehearsal"
+        ],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "corrupt_stale_state",
+        "applicability": "required",
+        "status": "passed",
+        "case_count": 1,
+        "rationale": "Stale, missing or corrupt state is rejected.",
+        "tools": [
+          "repository-owned deterministic tests",
+          "protected exact-SHA CI",
+          "isolated recovery rehearsal"
+        ],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "cancellation_restart_recovery",
+        "applicability": "required",
+        "status": "passed",
+        "case_count": 1,
+        "rationale": "Bundle restore and runtime restart or atomic recovery are verified.",
+        "tools": [
+          "repository-owned deterministic tests",
+          "protected exact-SHA CI",
+          "isolated recovery rehearsal"
+        ],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "abusive_user_behavior",
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "case_count": 0,
+        "rationale": "No direct end-user mutation or behavioral input surface exists.",
+        "tools": [],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      },
+      {
+        "id": "accessibility_cognitive_intervention",
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "case_count": 0,
+        "rationale": "No end-user UI exists in this repository deployment boundary.",
+        "tools": [],
+        "evidence_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      }
+    ],
+    "campaign": {
+      "status": "passed",
+      "exact_sha": "e0018afca66f2884a9f7654a8c2cba01e2fc5f04",
+      "environment": "isolated_non_production",
+      "real_users": false,
+      "production_data": false,
+      "deterministic_seeds": [
+        "sod-1094-m5-20260926"
+      ],
+      "generated_case_count": 4,
+      "scenario_count": 4,
+      "passed_count": 4,
+      "failed_count": 0,
+      "blocked_count": 0,
+      "recovery_verified": true,
+      "artifact_manifest_sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433",
+      "started_at": "2026-09-26T20:38:00Z",
+      "completed_at": "2026-09-26T21:03:00Z",
+      "residual_unknowns": [
+        "Coverage is bounded to the recorded repository-specific model and exact source."
+      ]
+    }
+  },
+  "blockers": [],
+  "residual_risks": [
+    "Future platform behavior can change after this time-bounded observation.",
+    "Historical former-owner strings remain only where required as migration provenance or negative fixtures."
+  ],
+  "evidence": {
+    "linear_issue": "SOD-1094",
+    "linear_updated_at": "2026-09-26T20:13:14Z",
+    "github_repository_id": 1324074908,
+    "source_refs": [
+      "Linear SOD-1094",
+      "Linear SOD-1086 comment 356c1ca1-3325-4514-a655-51036b84c599",
+      "GitHub kristoffersodersten/.github@e0018afca66f2884a9f7654a8c2cba01e2fc5f04",
+      "docs/qualification/m5-evidence.md"
+    ],
+    "artifact_digests": [
+      {
+        "name": "docs/qualification/m5-evidence.md",
+        "sha256": "e63fcfa4b2b5f38db3604add367f0f9721dae0168600e896ce9ba4b062839433"
+      }
+    ]
+  }
+}
