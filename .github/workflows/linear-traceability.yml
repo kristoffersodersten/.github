@@ -18,8 +18,8 @@ jobs:
       - name: Check out policy repository
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          repository: Namaka-Inc/.github
-          ref: main
+          repository: kristoffersodersten/.github
+          ref: ${{ github.workflow_sha }}
       - name: Validate pull request metadata
         if: github.event_name == 'pull_request'
         env:
