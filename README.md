@@ -1,7 +1,7 @@
-# Namaka-Inc GitHub governance
+# Kristoffer Södersten GitHub governance
 
-This repository is the organization-wide source for default GitHub community
-health files and the GitHub side of the Linear traceability contract.
+This public repository is the personal-namespace source for default GitHub
+community health files and the GitHub side of the Linear traceability contract.
 
 ## Mandatory contract
 
@@ -27,13 +27,13 @@ The policy and default templates are active organization defaults. The reusable
 validator is available at:
 
 ```yaml
-uses: Namaka-Inc/.github/.github/workflows/linear-traceability.yml@main
+uses: kristoffersodersten/.github/.github/workflows/linear-traceability.yml@<verified-commit-sha>
 ```
 
 Templates communicate the contract but do not stop a merge. A repository is
 hard-enforced only after the validator is installed and configured as a required
 check on its protected default branch. Rollout is tracked in Linear issue
-`SOD-559`.
+`SOD-1094`; callers pin an exact verified commit rather than a mutable branch.
 
 The observed repository-by-repository rollout state is recorded in
 [`repository-inventory.json`](repository-inventory.json). A blocked protection

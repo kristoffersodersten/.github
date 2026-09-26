@@ -1,19 +1,31 @@
 {
-  "schema_version": "1.0.0",
-  "organization": "Namaka-Inc",
-  "observed_at": "2026-08-10T17:43:00Z",
+  "schema_version": "2.0.0",
+  "namespace": "kristoffersodersten",
+  "linear_authority": {
+    "migration": "SOD-1086",
+    "global_governance": "SOD-1094",
+    "accepted_brief_comment": "7ee3cd72-f8c8-4450-81ce-a2c71cdcb65f"
+  },
+  "observed_at": "2026-09-26T17:55:00Z",
   "required_check": "Validate Linear contract",
   "repositories": [
-    { "name": ".github", "visibility": "public", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "context": "Validate Linear contract", "strict": true, "enforce_admins": true } },
-    { "name": "axiom-core", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "pull_request": 59, "contexts": ["validate", "Validate Linear contract / Validate Linear contract"] } },
-    { "name": "demo-repository", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "negative_pull_request": 3, "positive_pull_request": 4, "contexts": ["build", "Validate Linear contract / Validate Linear contract"] } },
-    { "name": "namakaos-reference-slice", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "pull_request": 6, "contexts": ["Validate Linear contract / Validate Linear contract"] } },
-    { "name": "novainvest", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "pull_request": 38, "signed_intent": "SOD-559-global-linear-traceability", "contexts": ["verify", "axiom_validate", "Validate Linear contract / Validate Linear contract"] } },
-    { "name": "novaviz", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "pull_request": 2, "contexts": ["Validate Linear contract / Validate Linear contract"] } }
+    { "name": ".github", "repository_id": 1324074908, "migration_issue": "SOD-1094", "visibility": "public", "default_branch": "main", "observed_head": "b229bf54f59aeac3df840c3816607c00ee3bf2a9", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": true, "contexts": ["Validate Linear contract"] } },
+    { "name": "axiom-core", "repository_id": 1228550873, "migration_issue": "SOD-1095", "visibility": "private", "default_branch": "main", "observed_head": "cd12d0547d210ea7e9d985fce55f90acc4d6317a", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": true, "contexts": ["validate"] } },
+    { "name": "demo-repository", "repository_id": 1327160173, "migration_issue": "SOD-1087", "visibility": "private", "default_branch": "main", "observed_head": "244fb42c2cb171cdebf762f0ce6f2ad026a0606e", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": false, "contexts": ["build", "Validate Linear contract / Validate Linear contract"] } },
+    { "name": "mcp-servers", "repository_id": 1331914434, "migration_issue": "SOD-1089", "visibility": "private", "default_branch": "main", "observed_head": "f7130c18e07b7f33b1d458acd1da45e55ea9dec1", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": false, "contexts": ["validate"] } },
+    { "name": "namaka-inc-website", "repository_id": 1336312956, "migration_issue": "SOD-1093", "visibility": "private", "default_branch": "main", "observed_head": "a725c212fdeb4dda3348d51669d5e963740ef81b", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": false, "contexts": ["verify"] } },
+    { "name": "novaforge", "repository_id": 1333860594, "migration_issue": "SOD-1092", "visibility": "private", "default_branch": "main", "observed_head": "757e8e3151a96e88ff67b0aba78c6f785181ae90", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": true, "contexts": ["verify"] } },
+    { "name": "novainvest", "repository_id": 1234447080, "migration_issue": "SOD-1090", "visibility": "private", "default_branch": "main", "observed_head": "308afddd1d8624c19254bc406558583350277f37", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": false, "contexts": ["verify", "axiom_validate", "Validate Linear contract / Validate Linear contract"] } },
+    { "name": "novaviz", "repository_id": 1323945642, "migration_issue": "SOD-1091", "visibility": "private", "default_branch": "main", "observed_head": "9538971927d72506d1cd0826d56d98cfc5b58e35", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": true, "contexts": ["Test contracts", "Validate Linear contract", "Repository security (javascript-typescript)", "Repository security (python)"] } },
+    { "name": "skills", "repository_id": 1331909269, "migration_issue": "SOD-1088", "visibility": "private", "default_branch": "main", "observed_head": "f45bc93545df914d379d027245135f9a21328d9f", "protection": { "enabled": true, "strict": true, "enforce_admins": true, "signed_commits": false, "contexts": ["validate"] } }
   ],
+  "source_organization": {
+    "login": "Namaka-Inc",
+    "remaining_repositories": 0,
+    "deletion_requires_separate_confirmation": true
+  },
   "blocker": {
-    "github_response": null,
-    "current_blocker": null,
-    "forbidden_fallbacks": ["bypass_signed_intent", "replace_trusted_signer_without_authority", "claim_partial_rollout_as_global_enforcement"]
+    "current_blocker": "CALLER_REBIND_AND_EXACT_SHA_VALIDATION_PENDING",
+    "forbidden_fallbacks": ["mutable_workflow_pin", "repository_redirect_as_binding", "bypass_protected_gate", "claim_transfer_as_terminal_validation"]
   }
 }
